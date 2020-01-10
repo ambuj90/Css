@@ -40,66 +40,74 @@ label{
 }
 
  #line1:before, #line1:after{
-          width: 56px;
-    height: 2px;
-    position: absolute;
-    background: #c02828;
-    content: "";
-    right: 0;
-    left: 30%;
-    bottom: 0;
-    top: 0;
-    transition: transform 1s linear;
-    transform-origin: bottom left;
-    transform-style: preserve-3D;
+          position: absolute;
+        content: "";
+        height: 2px;
+        width: 7.5%;
+        background: #c02828;
+        top: 0;
+        left: 15%;
+        right: 0;
+        bottom: 0;
+        margin: auto; 
+       
+        transition: transform 1s linear;
+        transform-origin: top left;
+        transform-style: preserve-3D;
 }
 #line1:before{
-     left: 22.7%;
-    
+         left: 0;
+    margin: 0 22.7%;
+    transform-origin: bottom left;
 }
 
 #line1:after{
-  transform-origin: bottom right;
+        left: 15%;
+    transform-origin: bottom right;
+    margin: 0px 14.7%;
 }
 
 #line2:before, #line2:after{
-    width: 56px;
-    height: 2px;
-    position: absolute;
-    background: #c02828;
-    content: "";
-    right: 0;
-    left: 42.8%;
-    bottom: 0;
-    top: 0;
-    transition: transform 1s linear;
-    transform-origin: bottom left;
-    transform-style: preserve-3D;
+             width: 7.5%;
+             height: 2px;
+             position: absolute;
+             background: #c02828;
+             content: "";
+            
+             left: 0;
+             bottom: 0;
+             top: 0;
+             transition: transform 1s linear;
+             transform-origin: bottom left;
+             transform-style: preserve-3D;
 }
-#line2:after{
 
+#line2:after{
+    margin: 0% 42.8%;
 }
 #line2:before{
-       left: 49.9%;
+            margin: 0 49.7%;
+    transform-origin: bottom right;
         transform-origin: bottom right;
 }
 #line:after, #line:before{
-	   position: absolute;
-    content: "";
-    border: 1px solid #c02828;
-    width: 55.5px;
-    background: #c02828;
-    left: 19px; 
-    right: 0;
-     transition: transform 1s linear;
-    transform-origin: center left;
-    transform-style: preserve-3D;
+	      position: absolute;
+        content: "";
+        height: 2px;
+        width: 7.5%;
+        background: #c02828;
+        left: 0; 
+        margin: 0 2.5%;
+        transition: transform 1s linear;
+        transform-origin: top left;
+        transform-style: preserve-3D;
 
 	 
 }
 #line:after{ 
-    left: 77px;
+           right: 0;
     transform-origin: top right;
+    margin: 0% 10%;
 }
 #line:before{
                   
@@ -117,45 +125,26 @@ label{
                      transform: rotate(135deg);
                          top: 2px;
 }
-#input2:checked  ~ #line:before{ 
-	animation-name: input2;  
-  
-}
-#input3:checked  ~ #line{ 
-	animation-name: input3; left:40%; 
-}
+
 #input2:checked ~ #line1:before{ 
   transform: rotate(-135deg);  
-      top: -1px;
+    
   
 }
 #input2:checked ~ #line1:after{ 
   transform: rotate(135deg);  
-      top: -1px;
+      
 }
 #input3:checked  ~ #line2:before{ 
      transform: rotate(135deg); 
-       top: -1px; 
+      
 }
 #input3:checked  ~ #line2:after{ 
  transform: rotate(-135deg); 
- top: -1px;    
+    
 }
 
 
-@keyframes input3{ 
-	30%, 70% { 
-		transform:scale(0.5); 
-		}
-
-		 }
-
-@keyframes spin {
-  100% {
-            transform: rotate(135deg);
-  }
- 
-}
 
 	</style>
 </head>
