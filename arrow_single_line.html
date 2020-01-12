@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <style type="text/css">
+
+
+  body{
+    margin: 20px;
+    padding: 50px;
+    background-color: #1f1f1f;
+  }
+  	#container {
+    width:95px;
+    height:2px;
+    background-color:darkslategray;
+    position:relative;
+    z-index: -1;
+}
+#container:before{
+    position: absolute;
+        content: "";
+        width: 95px;
+        height: 2px;
+        z-index: 9999;   
+        animation-name: move_right;
+        animation-duration: 2.5s;
+        animation-timing-function: ease-in;
+      
+        animation-iteration-count: infinite;
+        
+        background-color:#fff;
+}
+
+.arrow-right {
+         width: 0px;
+         height: 0;
+         border-top: 5px solid transparent;
+         border-bottom: 5px solid transparent;
+         border-left: 5px solid darkslategray;
+         position: absolute;
+         right: -5px;
+         top: -4px;
+         animation-name: move_arrow;
+         animation-duration: 2.5s;
+          animation-timing-function: ease-in;
+       
+      
+ 
+         animation-iteration-count: infinite;
+       
+        
+    
+}
+
+
+
+@keyframes move_right{
+    0%{
+       
+        width: 0px;
+    
+    }
+
+
+    80%, 100%{
+        
+        width: 95px;
+
+    }
+}
+    @keyframes move_arrow{
+      0%, 80%{
+  
+       border-left:5px solid darkslategray;
+     }
+
+
+    100%{
+      
+      border-left:5px solid #fff;  
+       
+
+    }
+}
+
+  </style>
+
+</head>
+<body>
+
+<div id="container">
+    <div class="arrow-right"></div>
+</div>
+</body>
+</html>
