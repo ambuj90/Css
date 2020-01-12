@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	
+	p::before{
+		content: "yes";
+	}	
+    .one.three .two h2>span:nth-child(1)::before{
+    	content: "no";
+    	color: red;
+    	font-size: 45px;
+    }
+    .two p::after{
+    	content: "what";
+    	color: yellow;
+
+    }
+    p::first-letter{
+    	color: red;
+    	font-size: xx-large;
+    	text-transform: uppercase;
+    }
+    p::first-line{
+    	color: blue;
+    }
+    p::selection{
+    	color: red;
+    	background-color: yellow;
+    }
+    ul>li ul li ol li:nth-child(2)::before{
+    	background-color: red;
+    	content: "svahsvyagdv";
+    	color: yellow;
+    	
+    	
+    }
+    ul>li:nth-child(3){
+    	background-color: blue;
+    }
+	</style>
+</head>
+<body>
+<p>bdjdnjnfn </p>
+<div class="one three">
+	<div class="two">
+		<h2>bjsdbsjdbdbn
+			<span>sdvsdbbd</span>
+			<span>bdsjdhusdhsidhshd</span>
+		</h2>
+		
+		<span>kshdjsdnsndisndi</span>
+		<p>bhbjnjnnn </p>
+		<p>shdvshdgsudbu </p>
+		<span>njasdbjasnu</span>
+		<h2>jbjdbcubu</h2>
+	</div>
+</div>
+<ul>
+	<li>hsdhdhs
+		<ul>
+			<li>jhdsds</li>
+			<li>jsdbsjdjs
+				<ol>
+					<li>bshdb</li>
+					<li>jdbsjdbs</li>
+					<li> jdbsjdbs</li>
+					<li>jdbsjdbs</li>
+				</ol>
+				<li>sdbsjdbu</li>
+			</li>
+		</ul>
+	</li>
+	<li>dbhdbubu</li>
+</ul>
+</body>
+</html>

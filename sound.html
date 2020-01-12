@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sound</title>
+	<style type="text/css">
+		.sound{
+			    width: 2px;
+                height: 13px;
+                margin-right: 0px;
+                transform-origin: 50% 50%;
+                opacity: 0.7;
+                position: relative;
+                display: inline-block;
+		  }
+	
+           .sound:first-of-type:before{
+        	    animation: bar1 1.2s infinite ease-in-out;
+        }
+
+           .sound:nth-of-type(2):before {
+                 animation: bar2 1.4s infinite ease;
+             }
+             .sound:nth-of-type(3):before {
+                 animation: bar3 1.1s infinite ease-in;
+             }
+              .sound:nth-of-type(4):before {
+                 animation: bar4 1.3s infinite ease;
+             }
+              .sound:nth-of-type(5):before {
+                 animation: bar5 1.3s infinite ease-in-out;
+             }
+
+        .sound:after, .sound:before{
+        	    position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #000;
+                
+        }
+        .sound:after {
+                opacity: 0;
+            }
+
+   
+
+       @keyframes bar1 {
+    from {
+    	background-color: red;
+    	height: 0%;
+    	margin-top: 5px;
+    }
+    to {
+    	background-color: black;
+    	height: 60%;
+    	margin-bottom: 5px;
+    	
+    }
+}
+
+   @keyframes bar2 {
+    from {
+    	background-color: red;
+    	margin-top: 1px;
+    	height: 20%;
+    }
+    to {
+    	background-color: black;
+    	height: 80%;
+    	margin-bottom: 1px;
+    }
+}
+
+
+ @keyframes bar3 {
+    from {
+    	background-color: red;
+    	height: 0%;
+    	margin-top: 4px;
+    }
+    to {
+    	background-color: black;
+    	height: 100%;
+    	margin-bottom: 4px;
+    }
+}
+
+   @keyframes bar4 {
+    from {
+    	background-color: red;
+    	height: 50%;
+    	margin-top: 5px;
+    }
+    to {
+    	background-color: black;
+    	height: 50%;
+    	margin-bottom: 5px;
+    }
+}
+
+   @keyframes bar5 {
+    from {
+    	background-color: red;
+    	height: 0%;
+    	margin-top: 4px;
+    }
+    to {
+    	background-color: black;
+    	height: 90%;
+    	margin-bottom: 4px;
+    }
+}
+	</style>
+</head>
+<body>
+	<div >
+        <div class="sound"></div>
+        <div class="sound"></div>
+        <div class="sound"></div>
+        <div class="sound"></div>
+        <div class="sound"></div>
+    </div>
+</body>
+</html>
