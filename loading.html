@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dcf</title>
+	<style type="text/css">
+		
+
+                   .loading{
+                       display:inline-block;
+                       position:relative;
+                       vertical-align:middle;
+                       width:  24px;
+                       height: 24px;
+                       border:2px solid transparent;
+                       border-top-color:#a05;
+                       border-bottom-color:#a05;
+                       border-radius:50%;
+                       animation: rotate 3s linear infinite;
+                 }
+                 .loading:after, .loading:before{
+                       position:absolute;
+                       content: "";
+                       width:1px; 
+                       height:0px;
+                       border:6px solid transparent;
+                       border-bottom-color:#a05;
+
+                 }
+                 .loading:after{
+                       top:1px;
+                       right:-7px;
+                       transform: rotate(135deg);
+
+                 }
+
+                 .loading:before{
+                        top:11px;
+                        left:-7px;
+                        transform: rotate(-45deg);
+                 }
+                 @keyframes rotate{
+                    to { 
+                    	transform: rotate(360deg);
+                    }
+                 }
+                 
+      	</style>
+   </head>
+   <body>
+            <span class="loading"></span>
+          
+
+</body>
+</html>
