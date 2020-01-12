@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Light Animation</title>
+	<style type="text/css">
+		
+
+  body{
+  	margin: 0;
+  	padding: 0;
+  	background-color: #1f1f1f;
+  }
+
+
+.main{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 250px;
+	height: 100px;
+	display: inline-block;
+	border: 2px solid #1f1f1f;
+	font-size: 22px;
+	border-radius: 50%;
+	font-family: 'Shadows Into Light', cursive;
+	transform: rotate(-9deg);
+    letter-spacing: 2px;
+    color: darkslategray;
+    font-weight: 600; 
+    transition: all 0.2s ease-in-out ;
+    white-space: nowrap;
+     text-overflow: clip;
+
+
+
+}
+.light {
+	transition: all 0.1s ease-in-out 0.1s;
+}
+.box{
+transition: all 0.3s ease-in-out 0.1s;	
+}
+.box1{
+transition: all 0.4s ease-in-out 0.2s;	
+}
+.main:hover{
+	color: white;
+text-shadow: 0 0 10px #fff;
+}
+
+.main:hover .light{
+color: white;
+text-shadow: 0 0 10px #fff;
+
+text-overflow: clip;
+}
+.main:hover .box{
+color: white;
+text-shadow: 0 0 10px #fff;
+text-overflow: clip;
+}
+.main:hover .box1{
+color: white;
+text-shadow: 0 0 10px #fff;
+text-overflow: clip;
+}
+
+	</style>
+</head>
+<body>
+<div class="main"><span class="light"> U</span><span class="light">n</span><span class="box1">i</span><span class="box1">v</span><span class="box">e</span><span class="light">r</span><span class="box1">s</span><span class="light">e</span>
+	
+</div>
+</body>
+</html>
