@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Audio play</title>
+	<style type="text/css">
+
+
+              	body, *{
+              		margin: 0;
+              		padding: 0;
+              		background-color: #1f1f1f;
+              	}
+              		
+              .main{
+              	    font-family: NettoOffc-Black,sans-serif;
+              	    letter-spacing: .08em;
+              	    font-size: 11px;
+              	    line-height: 1.6;
+              	    white-space: nowrap;
+              	     cursor: pointer;
+              	     color: #fff;
+              	     margin-top: 250px;
+              	     margin-left: 50%;
+                     font-weight: 700;
+                     transition: all 5s ease 0.5s;
+              }
+              .main:before{
+                  border-top: 4px solid transparent;
+                  border-bottom: 4px solid transparent;
+                  border-left: 5px solid #fff;
+                  border-right: 5px solid transparent;
+                  width: 0px;
+                  height: 0px;
+                  position: absolute;
+                  content: "";
+                  left: 57.5%;
+                  top: 254px;
+                  right: 0;
+                  vertical-align: middle;
+                  transition: all 5s ease 0.5s;
+              }
+              
+              .main:after{
+              	  position: absolute;
+                  content: "";
+                  left: 55%;
+                  top: 220px;
+                  width: 70px;
+                  height: 70px;
+                               
+                  border-radius: 50%;
+                  transition: all 5s ease 0.5s;
+              
+              }
+
+.main1, .main2{
+        	     position: absolute;
+                 content: "";
+                 width: 99px;
+                 height: 99px;
+                 top: 204px;
+                 left: 54%;
+                 border: 2px solid #e22541;
+                 border-radius: 50%;
+                 border-bottom: 2px solid transparent;
+                 border-right: 2px solid transparent;
+                 transform: rotate(81deg);
+                 background: transparent;
+               
+        }
+        .main2{
+        
+                 top: 204px;
+                 left: 54%;
+                 border-top: 2px solid #e22541;
+                 border-left: 2px solid transparent;
+                 transform: rotate(103deg);
+                 border-right: 2px solid #e22541;
+                 border-bottom: 2px solid transparent;
+             
+        }
+
+
+     .main:hover:before{
+                  border-top: 5px solid transparent;
+                  border-bottom: 5px solid transparent;
+                  border-left: 5px solid #fff;
+                  border-right: 5px solid transparent;
+       }
+      .main:hover{
+	
+            	margin-left: 51%;
+
+         }
+
+
+      
+
+
+
+	</style>
+</head>
+<body>
+<div class="main">PLAY VIDEO
+	
+</div>
+<div class="main2"></div>
+<div class="main1"></div>
+</body>
+</html>
