@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">   </script>
+<style type="text/css">
+.image-port {
+  text-align: center;
+    display: block;
+	}
+
+@media screen and (max-width: 768px){
+
+.carousel-inner {
+width: 222%!important;
+}
+}
+</style>
+	<link rel="stylesheet" type="text/css" href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- JavaScript for adding
+slider for multiple images
+shown at once-->
+<script type="text/javascript">
+		$(window).load(function() {
+			$(".carousel .item").each(function() {
+				var i = $(this).next();
+				i.length || (i = $(this).siblings(":first")),
+				i.children(":first-child").clone().appendTo($(this));
+				
+				for (var n = 0; n < 4; n++)(i = i.next()).length ||
+				(i = $(this).siblings(":first")),
+				i.children(":first-child").clone().appendTo($(this))
+			})
+		});
+	</script>
+
+</head>
+
+<body>
+	<!-- container class for bootstrap card-->
+<div class="container-full" >
+<div class="carousel slide" id="myCarousel">
+			<div class="carousel-inner">
+				<div class="item active">
+					<div class="col-xs-2">
+						<a href="https://tokeplanet.com/collections/bong-bowls">
+						 <img class="image-port" srcset="//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1_165x.png?v=1635242045 165w,//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1.png?v=1635242045 200w" src="//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1_1500x.png?v=1635242045" sizes="(min-width: 1200px) 550px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)" alt="" loading="lazy" width="200" height="200" class="img-responsive"><span class="image-port bong-link">Bong Bowls</span></a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-xs-2">
+						<a href="https://tokeplanet.com/collections/american-bongs">
+						<img class="image-port" srcset="//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1_165x.png?v=1635242045 165w,//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1.png?v=1635242045 200w" src="//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1_1500x.png?v=1635242045" sizes="(min-width: 1200px) 550px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)" alt="" loading="lazy" width="200" height="200" class="img-responsive"><span class="image-port bong-link">American Bongs</span></a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-xs-2">
+						<a href="https://tokeplanet.com/collections/best-bongs-under-100">
+						<a href="https://tokeplanet.com/collections/best-bongs-under-100">
+						<img class="image-port" srcset="//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1_165x.png?v=1635242045 165w,//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1.png?v=1635242045 200w" src="//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1_1500x.png?v=1635242045" sizes="(min-width: 1200px) 550px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)" alt="" loading="lazy" width="200" height="200"  class="img-responsive"><span class="image-port bong-link"> Best Bongs under $100</span></a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-xs-2">
+						<a href="https://tokeplanet.com/collections/best-bongs-under-100">
+						<img class="image-port" srcset="//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1_165x.png?v=1635242045 165w,//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1.png?v=1635242045 200w" src="//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1_1500x.png?v=1635242045" sizes="(min-width: 1200px) 550px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)" alt="" loading="lazy" width="200" height="200"  class="img-responsive"><span class="image-port bong-link"> Bongs With Filters</span></a>					</div>
+				</div>
+				<div class="item">
+					<div class="col-xs-2">
+						<a href="https://tokeplanet.com/collections/best-bongs-under-100">
+						<img class="image-port" srcset="//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1_165x.png?v=1635242045 165w,//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1.png?v=1635242045 200w" src="//cdn.shopify.com/s/files/1/0601/2505/3143/files/img1_1500x.png?v=1635242045" sizes="(min-width: 1200px) 550px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)" alt="" loading="lazy" width="200" height="200" class="img-responsive"> <span class="image-port bong-link">Water Pipe Bongs</span></a>					</div>
+				</div>
+			</div> <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		<i class="glyphicon glyphicon-chevron-left">
+		</i>
+		</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+			<i class="glyphicon glyphicon-chevron-right">
+			</i>
+		</a>
+
+		</div>
+	</div>
+</body>
+
+</html>
