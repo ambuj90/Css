@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .gallery-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      height: 100vh;
+      animation: moveImages 10s linear infinite;
+    }
+
+    .image {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+
+    .paused {
+      animation-play-state: paused;
+    }
+
+    @keyframes moveImages {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(calc(-100% * 1));
+      }
+    }
+  </style>
+  <title>Image Gallery</title>
+</head>
+<body>
+  <div class="gallery-container">
+    <div class="image-gallery"></div>
+  </div>
+  <script>
+    const imagePaths = [
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+      'https://cms.fatjoe.com/wp-content/uploads/2023/08/haro-links.png',
+    ];
+
+    const imageLinks = [
+      'https://example.com/link1',
+      'https://example.com/link2',
+      // ... (add all your image links here)
+    ];
+
+    const galleryContainer = document.querySelector('.image-gallery');
+    let isPaused = false;
+
+    imagePaths.forEach((path, index) => {
+      const image = document.createElement('img');
+      image.src = path;
+      image.alt = `Image jQuery{index + 1}`;
+      image.classList.add('image');
+      image.addEventListener('click', () => {
+        window.open(imageLinks[index], '_blank');
+        isPaused = !isPaused;
+        updateAnimationState();
+      });
+      galleryContainer.appendChild(image);
+    });
+
+    document.body.addEventListener('mouseenter', () => {
+      isPaused = true;
+      updateAnimationState();
+    });
+
+    document.body.addEventListener('mouseleave', () => {
+      isPaused = false;
+      updateAnimationState();
+    });
+
+    function updateAnimationState() {
+      galleryContainer.classList.toggle('paused', isPaused);
+    }
+  </script>
+</body>
+</html>
