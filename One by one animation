@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>One by one animation</title>
+
+  <style type="text/css">
+  .caterpillar-animation {
+    --ease-out-cubic: cubic-bezier(0.215,0.61,0.355,1);
+    --ease-in-out-cubic: cubic-bezier(0.645,0.045,0.355,1);
+    --ease-in-out-sine: cubic-bezier(0.445,0.05,0.55,0.95);
+    --ease-out-expo: cubic-bezier(0.19,1,0.22,1);
+    font-size: 10px;
+}
+
+ .caterpillar-animation .visual {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    margin: 0 auto;
+    perspective: 200rem;
+    place-items: center;
+    position: relative;
+    width: 90%;
+}
+
+.caterpillar-animation .visual[data-side="1"] .stack {
+    transition: visibility .3s;
+    transition-delay: .1s;
+    visibility: hidden;
+}
+
+.caterpillar-animation .stack {
+    transform-style: preserve-3d;
+    transition: visibility .3s;
+    transition-delay: .2s;
+}
+.caterpillar-animation .collage, .caterpillar-animation .stack {
+    grid-area: 1 / 1;
+    height: 100%;
+    width: 100%;
+    }
+
+    .caterpillar-animation .stack .card {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: 25% 45%;
+    width: 50%;
+}
+ 
+ *, ::before, ::after {
+    box-sizing: border-box;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+}
+.caterpillar-animation .visual[data-side="1"] .stack {
+    transition: visibility .3s;
+    transition-delay: .1s;
+    visibility: hidden;
+}
+
+.caterpillar-animation .link {
+    left: 50%;
+    position: absolute;
+    top: 55%;
+    transform: translateX(-140%) translateY(125%) translateZ(10rem);
+    transition: .7s transform var(--ease-in-out-cubic);
+    width: 35%;
+  }
+  .caterpillar-animation .visual[data-side="1"] .link {
+    transform: translateX(-50%) translateY(-50%) translateZ(10rem) scale(.8);
+    transition: .7s transform var(--ease-out-cubic);
+    transition-delay: .2s;
+  }
+  .caterpillar-animation .collage {
+    --gap: 4%;
+    display: grid;
+    gap: var(--gap);
+    grid-template-areas:
+        ". medium ."
+        "beanie . video"
+        "music twitter cover";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    transform: scale(.8);
+    transform-style: preserve-3d;
+    transition: visibility 1s;
+    width: 100%;
+}
+.caterpillar-animation .collage, .caterpillar-animation .stack {
+    grid-area: 1 / 1;
+    height: 100%;
+    width: 100%;
+}
+.caterpillar-animation .visual[data-side="0"] .collage {
+    visibility: hidden;
+}
+.caterpillar-animation .collage .item#beanie {
+    --x: 120%;
+    --y: 42%;
+    --z: -3;
+    left: calc(-30% - var(--gap));
+    top: -52%;
+    }
+    .caterpillar-animation .collage .item {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    height: 0;
+    padding-top: 100%;
+    position: relative;
+    transition: 1s transform var(--ease-out-expo), .5s opacity var(--ease-out-cubic);
+    transition-delay: calc(var(--index)* .04s + .26s);
+    width: 100%;
+  }
+  .caterpillar-animation .visual[data-reducemotion=false][data-side="0"] .collage .item {
+    transform: translate(var(--x), var(--y)) scale(.4);
+  }
+  .caterpillar-animation .visual[data-side="0"] .collage .item {
+    opacity: 0;
+    transition: .5s transform var(--ease-out-cubic), .3s opacity var(--ease-out-cubic);
+    transition-delay: 0s;
+}
+.caterpillar-animation .collage .item#beanie .media {
+    width: 120%;
+}
+.caterpillar-animation .collage .item .carousel {
+    overflow: hidden;
+}
+@media screen and (min-width: 768px)
+.caterpillar-animation .collage .item .media {
+    border-radius: 1.5vw;
+}
+.caterpillar-animation .collage .item .media {
+    border-radius: 3vw;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.caterpillar-animation .collage .item .media * {
+    border-radius: inherit;
+}
+
+.caterpillar-animation .collage .item .media>*{
+      grid-area: 1 / 1;
+    width: 100%;
+}
+/*   .caterpillar-animation .card {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .caterpillar-animation .card.active {
+      opacity: 1;
+    }*/
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.caterpillar-animation .visual .card img{
+  width: 250px;
+}
+.card {
+  opacity: 0;
+  animation: fadeInOut 12s infinite;
+}
+
+.card:nth-child(1) { animation-delay: 0s; }
+.card:nth-child(2) { animation-delay: 2s; }
+.card:nth-child(3) { animation-delay: 4s; }
+.card:nth-child(4) { animation-delay: 6s; }
+.card:nth-child(5) { animation-delay: 8s; }
+.card:nth-child(6) { animation-delay: 10s; }
+
+</style>
+
+</head>
+<body>
+<figure class="caterpillar-animation">
+  <div class="visual" aria-hidden="true" data-side="0" data-reducemotion="false">
+    <div class="stack">
+  <div class="card" style="transform: translateX(-57.1694%) translateY(57.1694%) translateZ(7.85847px) scale(1); opacity: 1;">
+    <img src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/social-0.svg">
+  </div>
+  <div class="card" style="transform: translateX(-78.1635%) translateY(78.1635%) translateZ(8.90817px) scale(1); opacity: 1;">
+    <img src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/social-1.svg">
+  </div>
+  <div class="card" style="transform: translateX(-89.9406%) translateY(89.9406%) translateZ(9.99406px) scale(0.801188); opacity: 0.0059406;">
+    <img src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/social-2.svg">
+  </div>
+  <div class="card" style="transform: translateX(0%) translateY(0%) translateZ(4.56974px) scale(0.956974); opacity: 0.569738;">
+    <img src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/social-3.svg">
+  </div>
+  <div class="card" style="transform: translateX(-13.8712%) translateY(13.8712%) translateZ(5.69356px) scale(1); opacity: 1;">
+    <img src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/social-4.svg">
+  </div>
+  <div class="card" style="transform: translateX(-35.7819%) translateY(35.7819%) translateZ(6.7891px) scale(1); opacity: 1;">
+    <img src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/social-5.svg">
+  </div>
+    </div>
+    <div class="link">
+      <img src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/link.svg" style="transform: scale(var(--motion-scale)); --motion-scale: 1;">
+    </div>
+    <div class="collage">
+      <div class="item" id="beanie" style="--index: 0;">
+        <div class="media carousel">
+          <img placeholder="none" src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/product-background.jpg" alt="Product background">
+          <img placeholder="none" src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/product-0.png" alt="Product 1" class="slide" style="--i: 0;">
+          <img placeholder="none" src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/product-1.png" alt="Product 2" class="slide" style="--i: 1;">
+          <img placeholder="none" src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/product-2.png" alt="Product 3" class="slide" style="--i: 2;">
+          <img placeholder="none" src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/product-0.png" alt="Product 1" class="slide" style="--i: 3;">
+        </div>
+      </div>
+      <div class="item" id="cover" style="--index: 1;">
+        <img placeholder="none" src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/cover.jpg" alt="Book cover image" class="media image">
+      </div>
+      <div class="item" id="medium" style="--index: 2;">
+        <img placeholder="none" src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/medium.jpg" alt="Medium app Image" class="media image">
+      </div>
+      <div class="item" id="music" style="--index: 3;">
+        <img src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/music.jpg" alt="Instagram music image" class="media image">
+      </div>
+      <div class="item" id="twitter" style="--index: 4;">
+        <img placeholder="none" src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/twitter.jpg" alt="Twitter widget" class="media image">
+      </div>
+      <div class="item" id="video" style="--index: 5;">
+        <div class="media video">
+        <img src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/player.svg">
+        <img placeholder="none" src="https://api.blog.production.linktr.ee/wp-content/themes/blog-theme/static-assets/Caterpiller/videocover.png" alt="Video" style="z-index: -1;">
+      </div>
+    </div>
+    </div>
+  </div>
+  <figcaption>A looping animation displaying how your Linktree url can exist in many different places.</figcaption>
+</figure>
+
+
+
+</body>
+</html>
+
+
+
+
+
