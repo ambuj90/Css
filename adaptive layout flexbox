@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adaptive Layout with Flexbox</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+
+  .item {
+    flex: 0 0 30%; /* Each item takes up 30% of the container */
+    margin: 10px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .item {
+      flex: 0 0 45%; /* On smaller screens, each item takes up 45% of the container */
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .item {
+      flex: 0 0 90%; /* On even smaller screens, each item takes up 90% of the container */
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="item">
+    <h2>Heading 1</h2>
+    <p>This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <a href="#">Link 1</a>
+  </div>
+  <div class="item">
+    <h2>Heading 2</h2>
+    <p>This is another paragraph of text. Ut venenatis consequat nisl, non convallis lectus vehicula in.</p>
+    <a href="#">Link 2</a>
+  </div>
+  <div class="item">
+    <h2>Heading 3</h2>
+    <p>This is a third paragraph of text. Duis sed libero eu risus consectetur volutpat.</p>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+
+</body>
+</html>
